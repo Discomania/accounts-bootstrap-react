@@ -2,19 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Errors = ({ errors }) => {
-  return errors.map((err, i) => (
-    <span
-      key={i}
-      style={{ color: 'red', marginBottom: '10px', display: 'block' }}>
-
-      {err.errStr}
-
-    </span>
-  ))
+	return errors.map((err, i) => (
+		<Form.Control.Feedback type="invalid" key={i}>
+			{err.errStr}
+		</Form.Control.Feedback>
+	))
 }
 
 Errors.propTypes = {
-  errors: PropTypes.array.isRequired
+	errors: PropTypes.array.isRequired
 }
 
 export default Errors

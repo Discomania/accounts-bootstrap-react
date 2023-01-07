@@ -41,15 +41,15 @@ class SelectField extends React.Component {
         {defaults.showLabels && <label>{displayName}</label>}
         <br />
 
-        <select defaultValue={defaultOption ? defaultOption.value : options[0].value} onChange={this.handleChange}>
+        <Form.Select defaultValue={defaultOption ? defaultOption.value : options[0].value} onChange={this.handleChange}>
           {options.map((option, i) => (
             <option key={i} value={option.value}>{option.text}</option>
           ))}
-        </select>
+        </Form.Select>
         <br />
 
-        {error && <span style={{ color: 'red' }}>{error.errStr}</span>}
-        <br />
+		{error && <Form.Control.Feedback type="invalid">{error.errStr}</Form.Control.Feedback>}
+       <br />
 
       </div>
 

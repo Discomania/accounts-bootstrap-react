@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Form from 'react-bootstrap/Form';
 
 class RadioField extends React.Component {
 
@@ -34,24 +35,24 @@ class RadioField extends React.Component {
 
       <div>
 
-        {defaults.showLabels && <label>{displayName}</label>}
+        {defaults.showLabels && <Form.Label>{displayName}</Form.Label>}
         <br />
 
         {options.map((option, i) => (
           <React.Fragment key={i}>
-            <input
+            <Form.Control
               type='radio'
               value={option.value}
               checked={values[_id] === option.value}
               onChange={this.handleChange}
             />
-            <label>{option.text}</label>
+            <Form.Label>{option.text}</Form.Label>
             <br />
           </React.Fragment>
         ))}
 
         <br />
-        {error && <span style={{ color: 'red' }}>{error.errStr}</span>}
+        {error && <Form.Control.Feedback type="invalid">{error.errStr}</Form.Control.Feedback>}
 
       </div>
     )
