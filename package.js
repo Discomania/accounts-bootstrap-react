@@ -13,7 +13,7 @@ Package.onUse(api => {
 })
 
 Npm.depends({
-	"bootstrap": '^5.2.3',
-	"react-bootstrap": '^2.7.0',
-	"react-bootstrap-icons": "^1.10.2",
+	bootstrap: '5.2.3',
+	'react-bootstrap': '2.7.0',
+	'react-bootstrap-icons': "1.10.2",
 });

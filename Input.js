@@ -2,37 +2,33 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 
 const InputField = props => {
-  const {
-    _id,
-    type,
-    displayName,
-    placeholder,
-    onChange,
-    focusInput,
-    defaults,
-    error
-  } = props
+	const {
+		_id,
+		type,
+		displayName,
+		placeholder,
+		onChange,
+		focusInput,
+		defaults,
+		error
+	} = props
 
-  return (
-    <div>
+	return (
+		<Form.Group className="mb-3">
 
-      {defaults.showLabels && <Form.Label>{displayName}</Form.Label>}
-      <br />
+			{defaults.showLabels && <Form.Label>{displayName}</Form.Label>}
 
-      <Form.Control
-        type={type}
-        onChange={(e) => onChange(e, _id)}
-        placeholder={defaults.showPlaceholders ? placeholder : ''}
-        autoFocus={focusInput}
-      />
+			<Form.Control
+				type={type}
+				onChange={(e) => onChange(e, _id)}
+				placeholder={defaults.showPlaceholders ? placeholder : ''}
+				autoFocus={focusInput}
+			/>
 
-      <br />
-      {error && <Form.Control.Feedback type="invalid">{error.errStr}</Form.Control.Feedback>}
+			{error && <Form.Control.Feedback type="invalid">{error.errStr}</Form.Control.Feedback>}
 
-      <br />
-
-    </div>
-  )
+		</Form.Group>
+	)
 }
 
 export default InputField

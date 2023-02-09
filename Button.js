@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
+import Rbutton from 'react-bootstrap/Button';
 
 class Button extends React.Component {
   /* Default accounts-react button element */
@@ -9,10 +9,10 @@ class Button extends React.Component {
     const { onClick, text, social } = this.props
 
     return (
-      <Button onClick={onClick} className={ social ? 'social-btn ' + social : ''}>
+      <Rbutton onClick={onClick} className={ social ? 'social-btn mb-2 me-2 ' + social : 'mb-2'}>
         {social ? 'Continue with ' + text[0].toUpperCase() + text.substr(1)
         : text}
-      </Button>
+      </Rbutton>
     )
   }
 }
