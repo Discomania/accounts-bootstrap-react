@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Form from 'react-bootstrap/Form';
 
 const Errors = ({ errors }) => {
 	return errors.map((err, i) => (
