@@ -23,6 +23,7 @@ const InputField = props => {
 				onChange={(e) => onChange(e, _id)}
 				placeholder={defaults.showPlaceholders ? placeholder : ''}
 				autoFocus={focusInput}
+				isInvalid={!!error}
 			/>
 
 			{error && <Form.Control.Feedback type="invalid">{error.errStr}</Form.Control.Feedback>}
